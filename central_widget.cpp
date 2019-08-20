@@ -84,7 +84,7 @@ void CentralWidget::newGuess()
     std::uniform_int_distribution<std::size_t> dist(0, n_vocabulary - 1);
     do {
         m_currentVoc = dist(m_rng);
-    } while (m_hits[m_currentVoc] > m_hitLimit);
+    } while (m_hits[m_currentVoc] >= m_hitLimit);
     m_question->setText(vocabulary[m_currentVoc].q);
     m_answer->setText("");
     m_answer->setEnabled(true);
